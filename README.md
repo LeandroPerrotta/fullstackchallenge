@@ -27,7 +27,7 @@ Alterar o arquivo backend/db_pgsql.js para os dados de seu banco ou imagem.
 - pg (conector Pgsql)
 - fetch (para comunicação com a API publica dos veiculos)
 
-## Tecnologias utizadas no frontend 
+## Tecnologias utilizadas no frontend 
 
 - Ember JS
 - Ember-Table (apenas visualização)
