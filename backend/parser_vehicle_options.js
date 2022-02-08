@@ -29,6 +29,12 @@ function ParserVehicleOptions(){
 
 ParserVehicleOptions.prototype.fetchBrands = async function(){
 
+	if(this.brandsOut.data && this.brandsOut.data.length > 0 && MODE == 'API'){
+		//we already has this data, as the public API is only updated once by month we dont need
+		//request it again, just use the cached data. same will happens to the other methods bellow
+		return;
+	}
+
 	const url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas'
 	this.brandsOut.data = []
 	this.modelsOut = new Map()
@@ -83,6 +89,10 @@ ParserVehicleOptions.prototype.fetchBrands = async function(){
 
 ParserVehicleOptions.prototype.fetchModel = async function(brand_id){
 
+	if(this.modelsOut.has(brand_id) && MODE == 'API'){
+		return;
+	}
+
 	const url = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${brand_id}/modelos`
 
 	let response
@@ -116,6 +126,10 @@ ParserVehicleOptions.prototype.fetchModel = async function(brand_id){
 
 ParserVehicleOptions.prototype.fetchYear = async function(brand_id, model_id){
 
+	if(this.yearsOut.has(model_id) && MODE == 'API'){
+		return;
+	}
+
 	const url = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${brand_id}/modelos/${model_id}/anos`
 
 	let response
@@ -133,6 +147,11 @@ ParserVehicleOptions.prototype.fetchYear = async function(brand_id, model_id){
 				as the model_id seems to be universally unique id I do not need keep brand data.
 			*/
 			let details = await this.fetchDetails(brand_id, model_id, id)
+
+			if(!details.Combustivel){
+				return
+			}
+
 			this.years.set(id, { year: year.nome, version: details.Combustivel })
 
 			if(!this.yearsOut.has(model_id)){
@@ -179,7 +198,7 @@ async function brands() {
 
 async function models(brand_id) {
 
-	if(MODE == 'API'){
+	if(MODE == 'API' && !isNaN(brand_id)){
 		await singleton.fetchModel(brand_id)
 	}
 
@@ -188,7 +207,7 @@ async function models(brand_id) {
 
 async function years(brand_id, model_id){
 
-	if(MODE == 'API'){
+	if(MODE == 'API' && !isNaN(brand_id) && !isNaN(model_id)){
 		await singleton.fetchYear(brand_id, model_id)
 	}
 
