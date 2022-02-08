@@ -1,0 +1,5 @@
+// Default button - use in most cases
+.button-default {
+  @extend %button;
+  @include button-type($button-default-color, $button-default-bg-color, $button-default-border-color);
+}

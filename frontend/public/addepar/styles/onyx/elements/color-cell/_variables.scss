@@ -1,0 +1,13 @@
+// Core input variables
+@import '../inputs/variables';
+
+// Color Cell Variables
+// -------------
+$color-cell-size:                       $spacing-triple;
+$color-cell-spacing:                    $spacing-small / 2;
+$color-cell-disabled-opacity:           $disabled-item-opacity;
+
+// Border
+$color-cell-border:                     1px solid $border-item;
+$color-cell-active-border-color:        $background-white;
+$color-cell-active-outline:             1px solid $border-blue;

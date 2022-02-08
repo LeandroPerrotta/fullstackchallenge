@@ -1,0 +1,30 @@
+//  -----------------------------------
+//  Core - Core Variables | Transitions
+//  -----------------------------------
+
+@import 'duration';
+
+//  Types
+//  -------------------------
+  // Ease-in transition for elements coming into view
+  $transition-type-show:          ease-in !default;
+
+  // Ease-out transition for elements exiting the screen
+  $transition-type-hide:          ease-out !default;
+
+  // Standard transition type for transitioning element styling
+  $transition-type-default:       ease-in-out !default;
+
+
+//  Speeds
+//  -------------------------
+  $transition-speed-default:      $duration-medium !default;
+
+  $transition-speed-slow:         $duration-x-long !default;
+  $transition-speed-medium:       $transition-speed-default !default;
+  $transition-speed-fast:         $duration-short !default;
+
+//  Transition Declarations
+//  -------------------------
+  $background-transition:             background $transition-speed-medium $transition-type-default !default;
+  $overlay-transition:                visibility 0s, opacity $transition-speed-medium  $transition-type-show !default;

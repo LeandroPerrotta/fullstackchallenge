@@ -1,0 +1,32 @@
+// Text Input
+//
+// Base text input used throughout the app.
+//
+// Ember input helper usage
+// ```
+// {{input
+//   value=foo
+//   class="adde-text-input"
+// }}
+// ```
+//
+// Markup:
+// <input type="text" class="{{modifier_class}}" value="foo">
+//
+// .adde-text-input - Default button.
+//
+// Styleguide Addepar Style Toolbox - Elements - Text Input
+
+// TODO: Explore option for dev to toggle using global element styles vs class styles.
+// Doing classes for now bc we don't want to blow up Iverson.
+input[type='text'].adde-text-input {
+  box-sizing: border-box; // TODO: this should be part of global reset
+  height: $input-text-height;
+  padding: 0 $input-text-spacing-horizontal;
+  border: $input-text-border-width solid $input-text-border-color;
+
+  &:invalid,
+  &.is-invalid {
+    @include invalid-input();
+  }
+}

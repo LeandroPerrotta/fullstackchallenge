@@ -1,0 +1,47 @@
+//
+// Color Cell
+// -----------------------------------------------------------------------------
+// Styling for the base color cell
+
+// Placeholder created so active state can be used elsewhere
+%active-color-cell {
+  border-color: $color-cell-active-border-color;
+  outline: $color-cell-active-outline;
+}
+
+.color-cell {
+  display: inline-block;
+  vertical-align: middle;
+
+  box-sizing: content-box;
+  width: $color-cell-size;
+  height: $color-cell-size;
+  margin: $color-cell-spacing;
+  border: $color-cell-border;
+
+  // For optional background images
+  background-size: cover;
+
+  &.is-active {
+    @extend %active-color-cell;
+  }
+
+  &.is-transparent {
+    background-image: url('/@addepar/style-toolbox/assets/images/transparent_color.svg');
+  }
+
+  // Invalid is used for an improperly typed or unallowed color.
+  // Empty is used for no color mode.
+  &.is-invalid,
+  &.is-empty {
+    background-image: url('/@addepar/style-toolbox/assets/images/invalid_color.svg');
+  }
+
+
+  // Color cell could be disabled on its own,
+  // or disabled within the color picker button for example
+  &:disabled,
+  button:disabled & {
+    opacity: $color-cell-disabled-opacity;
+  }
+}

@@ -1,0 +1,5 @@
+// Danger button - use to warn user of negative action, such as delete
+.button-danger {
+  @extend %button;
+  @include button-type($button-danger-color, $button-danger-bg-color, $button-danger-border-color);
+}

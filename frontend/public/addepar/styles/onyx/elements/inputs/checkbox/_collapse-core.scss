@@ -1,0 +1,71 @@
+@import './variables';
+
+// Collapse Toggle
+//
+// Collapse toggle styling to use throughout the app. This class can be applied
+// directly to checkbox inputs, or can be applied to parent elements that
+// contain a checkbox input. The later is used for compatibility with IE11.
+//
+// Markup:
+// <input type="checkbox" class="collapse" />
+//
+// <span class="collapse">
+//   <input type="checkbox" />
+//   <span></span>
+// </span>
+//
+// Styleguide Style Toolbox - Elements - Collapse Toggle
+
+// Collapse Toggle CSS
+// -----------------------------------------------------------------------------
+
+@mixin base-collapse() {
+  appearance: none;
+  display: inline-block;
+  padding: $collapse-padding;
+  color: $collapse-color;
+  cursor: pointer;
+  position: relative;
+
+  input[type='checkbox'] {
+    opacity: 0.001;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  input[type='checkbox'] + * {
+    display: block;
+    width: 100%;
+  }
+
+  &:empty:before,
+  input[type='checkbox'] + *:before {
+    display: inline-block;
+    width: 100%;
+
+    text-align: center;
+
+    font-family: $font-family-base;
+    content: '\25be'; // down triangle
+  }
+
+  &:checked:before,
+  input[type='checkbox']:checked + *:before  {
+    color: $collapse-color-active;
+    transform: rotate(-90deg);
+  }
+
+  &:focus,
+  input[type='checkbox']:focus + *:before {
+    outline: none;
+    color: $collapse-color-active;
+  }
+}
+
+%collapse {
+  @include base-collapse();
+}

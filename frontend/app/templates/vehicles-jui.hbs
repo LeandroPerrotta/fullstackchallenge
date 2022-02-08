@@ -1,0 +1,10 @@
+{{page-title "Lista de veiculos (EasyUI)"}}
+<BaseContent>
+	<div id='buttons-bar'>
+		<BsButton @onClick={{action "onAdd"}} id='addBtn'>Adicionar</BsButton>
+		<BsButton @onClick={{action "onEdit"}} id='editBtn'>Editar</BsButton>
+		<BsButton @onClick={{action "onRemove"}} id='remBtn'>Remover</BsButton>
+	</div>
+	
+	<DatagridEasyui/>
+</BaseContent>

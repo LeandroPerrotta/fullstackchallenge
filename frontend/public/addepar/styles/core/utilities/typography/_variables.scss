@@ -1,0 +1,24 @@
+//  -----------------------------------
+//  Core - Utilities | Typography - Variables
+//  -----------------------------------
+
+// Font Family
+// -------------------------
+$global-font-folder:                '/@addepar/style-toolbox/assets/fonts' !default;
+$univers-font-folder:               $global-font-folder !default;
+$tiempos-headline-font-folder:      $global-font-folder !default;
+$tiempos-text-font-folder:          $global-font-folder !default;
+
+$univers:                           'Univers-Next' !default;
+$univers-condensed:                 'Univers-Next-Condensed' !default;
+$univers-tabular:                   'Univers-Tabular' !default;
+$tiempos:                           'Tiempos Text' !default;
+$tiempos-headline:                  'Tiempos Headline' !default;
+$backup-fonts:                      'Helvetica Neue', 'Helvetica', Arial, sans-serif !default;
+
+$font-family-sans-serif:            $univers, $backup-fonts !default;
+$font-family-serif:                 Georgia, 'Times New Roman', Times, serif !default;
+$font-family-monospace:             Menlo, Monaco, Consolas, 'Courier New', monospace !default;
+$font-family-condensed:             $univers-condensed, $font-family-sans-serif !default;
+$font-family-tabular:               $univers-tabular, $font-family-sans-serif !default;
+$font-family-base:                  $font-family-sans-serif !default;

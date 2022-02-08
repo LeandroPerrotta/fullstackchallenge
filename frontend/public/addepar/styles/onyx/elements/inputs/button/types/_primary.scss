@@ -1,0 +1,5 @@
+// Primary button - use for primary action in flow
+.button-primary {
+  @extend %button;
+  @include button-type($button-primary-color, $button-primary-bg-color, $button-primary-border-color);
+}

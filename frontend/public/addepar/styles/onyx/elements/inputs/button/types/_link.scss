@@ -1,0 +1,9 @@
+// Link button - a button that looks like a link
+.button-link {
+  @extend %button;
+  @include button-type($text-link, transparent, transparent);
+
+  &:not(:hover) {
+    text-decoration: underline;
+  }
+}

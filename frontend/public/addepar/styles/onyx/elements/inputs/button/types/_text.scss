@@ -1,0 +1,4 @@
+// Plain button (that should always have an icon to indicate that it is a button)
+.button-text {
+  @extend %button;
+}

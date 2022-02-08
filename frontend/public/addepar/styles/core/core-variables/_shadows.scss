@@ -1,0 +1,44 @@
+//  -----------------------------------
+//  Core - Core Variables | Shadows - Core Variables
+//  -----------------------------------
+
+@import 'colors/index';
+@import 'opacity';
+
+//  Color
+//  -------------------------
+$box-shadow-color-dark:                   rgba(0, 0, 0, $opacity-medium) !default;
+$box-shadow-color-medium:                 rgba(0, 0, 0, $opacity-light) !default;
+$box-shadow-color-light:                  rgba(0, 0, 0, $opacity-x-light) !default;
+
+//  Sizes
+//  -------------------------
+$box-shadow-size-x-small:                 1px !default;
+$box-shadow-size-small:                   2px !default;
+$box-shadow-size-medium:                  5px !default;
+$box-shadow-size-large:                   8px !default;
+$box-shadow-size-x-large:                 10px !default;
+
+//  Offsets
+//  -------------------------
+$box-shadow-offset-x-small:               2px !default;
+$box-shadow-offset-small:                 3px !default;
+$box-shadow-offset-medium:                4px !default;
+$box-shadow-offset-large:                 5px !default;
+$box-shadow-offset-x-large:               6px !default;
+
+$box-shadow-no-offset:                    0 0 !default;
+$box-shadow-offset-bottom-small:          0 $box-shadow-offset-small !default;      // 0px 3px
+$box-shadow-offset-bottom-medium:         0 $box-shadow-offset-medium !default;      // 0px 4px
+$box-shadow-offset-bottom-large:          0 $box-shadow-offset-large !default;       // 0px 5px
+$box-shadow-offset-top-small:             0 (-$box-shadow-offset-small) !default;    // 0px -3px
+$box-shadow-offset-top-medium:            0 (-$box-shadow-offset-medium) !default;   // 0px -4px
+
+//  Spread
+//  -------------------------
+$box-shadow-spread-default:               $box-shadow-size-x-small !default;
+
+//  Shadow Declarations
+//  -------------------------
+$default-shadow:                          $box-shadow-no-offset $box-shadow-size-medium $box-shadow-color-dark !default;
+$default-shadow-with-spread:              $box-shadow-no-offset $box-shadow-size-medium $box-shadow-spread-default $box-shadow-color-dark !default;

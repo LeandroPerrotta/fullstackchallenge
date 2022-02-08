@@ -1,0 +1,15 @@
+//  -----------------------------------
+//  Core - Core Variables | Colors - Text
+//  -----------------------------------
+
+$text-dark:                       $grey-xx-dark !default;
+$text-light:                      $grey-dark !default;
+$text-inverse:                    $white !default;
+$text-error:                      $red !default;
+$text-warning:                    $yellow-dark !default;
+$text-success:                    $green !default;
+$text-blue:                       $brand-blue-gray !default;
+
+$text-disabled:                   $text-light !default;
+$text-link:                       $brand-blue-gray !default;
+$text-link-hover:                 darken($brand-blue-gray, $hover-color-darken) !default;

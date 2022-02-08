@@ -1,0 +1,40 @@
+@import '../../core-variables/colors';
+@import '../../core-variables/spacing';
+@import '../../core-variables/typography';
+@import '../../utilities/typography/mixins';
+@import '../../utilities/typography/fonts';
+@import '../../core-variables/borders';
+@import '../../elements/inputs/button/index';
+
+// Text
+$adde-modal-font-family:                $font-family-sans-serif;
+$adde-modal-header-text-color:          $text-white;
+$adde-modal-header-font-size:           18px;
+$adde-modal-header-font-weight:         $font-normal;
+
+// Backgrounds
+$adde-modal-background:                 $background-white;
+$adde-modal-overlay-background:         rgba($background-dark, 0.5);
+$adde-modal-header-background:          $background-dark;
+$adde-modal-hover-close-background:     #4d4d4d;
+
+// Border
+$adde-modal-border-radius:              $border-radius-base;
+$adde-modal-box-shadow:                 0 0 5px 1px rgba(0, 0, 0, 0.3);
+$adde-modal-close-button-border-radius: $border-radius-none;
+$adde-modal-footer-border:              1px solid $border-item;
+
+// Paddings
+$adde-modal-header-padding:             $spacing-double;
+$adde-modal-body-padding:               $spacing-triple $spacing-double;
+$adde-modal-footer-padding:             $spacing-double;
+
+// Sizes
+$adde-modal-width-sm:                   360px;
+$adde-modal-width:                      600px;
+$adde-modal-width-lg:                   800px;
+$adde-modal-header-text-height:         $spacing-triple;
+$adde-modal-close-button-size:          $adde-modal-header-text-height + $adde-modal-header-padding * 2;
+
+// Misc
+$adde-modal-z-index:                    50;

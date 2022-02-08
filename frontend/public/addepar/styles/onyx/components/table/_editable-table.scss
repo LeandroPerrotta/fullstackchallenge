@@ -1,0 +1,71 @@
+@import './core';
+
+// This table uses the same core styles as our basic table,
+// but also has additional styles for usability as an editable table.
+.editable-table {
+  @extend %ember-table;
+
+  // There is a bizarre bug with position sticky that causes the table header cells
+  // to lose their border rendering when scrolled. This visually adds it back.
+  border-top: $table-border-style;
+  // The occluded-content placeholder is hiding the bottom border
+  // of the last row, this visually adds it back
+  border-bottom: $table-border-style;
+
+  // So scrollbar doesn't shift the table size and cause horizontal scrollbar.
+  // We just need to make sure the cells have enough padding to not get covered.
+  overflow: overlay;
+  // To match thinner looking scrollbar in design mock
+  // TODO: eventually address table scrollbars as a whole
+  &::-webkit-scrollbar {
+    width: $editable-table-scrollbar-width;
+  }
+
+  table {
+    // Fill space no matter how many columns
+    width: 100%;
+    // Try not to have horizontal scrollbar
+    max-width: 100%;
+  }
+
+  // Unique header style for this table
+  th {
+    background-color: $editable-table-header-bg-color;
+    box-shadow: $editable-table-header-box-shadow;
+  }
+
+  td,
+  th {
+    // All cells need border, "Excel" style
+    border: $table-border-style;
+    padding-left: $editable-table-cell-padding;
+    padding-right: $editable-table-cell-padding;
+    // for the position abs input inside
+    position: relative;
+  }
+
+  // (overwriting high specificity from core table...)
+  thead tr:first-child > th {
+    // As mentioned, position sticky bug causes border to disappear on scroll
+    // so we added it to the top of the container div.
+    // We remove the top border here bc when not scrolled, it doubles up with that wrapper border.
+    border-top: none;
+  }
+
+  td .ember-text-field {
+    // Design wants the input to fill the cell
+    @include fill-container();
+    border: $editable-table-input-active-border;
+    // Needed or the input stretches outside of the cell
+    max-width: 100%;
+    // Match padding of table cell
+    padding: $table-cell-padding ($editable-table-cell-padding - $editable-table-input-active-border-width);
+    // Match the text alignment of the cell
+    text-align: inherit;
+  }
+
+  // Highlight row on hover
+  .et-tr:hover td {
+    background-color: $table-row-hover-color;
+  }
+}

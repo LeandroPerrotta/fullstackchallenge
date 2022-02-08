@@ -1,0 +1,23 @@
+//  -----------------------------------
+//  Core - Core Variables | Typography - Font-size
+//  -----------------------------------
+
+$core-typography-size-1:            36px !default;
+$core-typography-size-2:            24px !default;
+$core-typography-size-3:            18px !default;
+$core-typography-size-4:            16px !default;
+$core-typography-size-5:            14px !default;
+$core-typography-size-6:            12px !default;
+
+$font-size-base-unit:               $core-typography-size-5 !default;
+
+$core-highlight-typography-h1:      $core-typography-size-1 !default;
+$core-highlight-typography-h2:      $core-typography-size-2 !default;
+$core-highlight-typography-h3:      $core-typography-size-3 !default;
+$core-highlight-typography-h4:      $core-typography-size-4 !default;
+$core-highlight-typography-body:    $core-typography-size-4 !default;
+
+$core-interface-typography-h1:      $core-typography-size-3 !default;
+$core-interface-typography-h2:      $core-typography-size-4 !default;
+$core-interface-typography-h3:      $core-typography-size-5 !default;
+$core-interface-typography-body:    $core-typography-size-5 !default;

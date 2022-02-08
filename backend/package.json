@@ -1,6 +1,7 @@
 {
   "name": "fullstackchallenge",
   "version": "1.0.0",
+  "type": "module",
   "description": "Este teste visa avaliar os conhecimentos e habilidades na nossa stack de tecnologias necessários para aplicação a oportunidade de desenvolvedor full stack aqui na [Sofit](https://sofit4.com.br).",
   "main": "index.js",
   "scripts": {
@@ -18,6 +19,10 @@
   },
   "homepage": "https://github.com/SofitSoftware/fullstackchallenge#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^3.2.0",
+    "pg": "^8.7.3"
   }
 }

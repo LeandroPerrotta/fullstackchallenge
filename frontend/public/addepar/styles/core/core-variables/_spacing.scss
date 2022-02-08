@@ -1,0 +1,21 @@
+//  -----------------------------------
+//  Core - Core Variables | Spacing - Core Variables
+//  -----------------------------------
+
+$spacing-base-unit:       8px !default;
+
+$spacing-xx-small:        $spacing-base-unit / 4 !default;  // 2px
+$spacing-x-small:         $spacing-base-unit / 2 !default;  // 4px
+$spacing-small:           $spacing-base-unit !default;      // 8px
+$spacing-medium:          $spacing-base-unit * 2 !default;  // 16px
+$spacing-large:           $spacing-base-unit * 3 !default;  // 24px
+$spacing-x-large:         $spacing-base-unit * 4 !default;  // 32px
+$spacing-xx-large:        $spacing-base-unit * 6 !default;  // 48px
+
+$spacer-xx-small:         $spacing-xx-small !default; // 2px
+$spacer-x-small:          $spacing-x-small !default;  // 4px
+$spacer-small:            $spacing-small !default;    // 8px
+$spacer-medium:           $spacing-medium !default;   // 16px
+$spacer-large:            $spacing-large !default;    // 24px
+$spacer-x-large:          $spacing-x-large !default;  // 32px
+$spacer-xx-large:         $spacing-xx-large !default; // 48px

@@ -1,0 +1,13 @@
+//  -----------------------------------
+//  Core - Core Variables | Radius
+//  -----------------------------------
+
+//  Default radius unit
+$border-radius-base-unit:    2px !default;
+
+//  Radius types
+$border-radius-none:         0 !default;
+$border-radius-small:        $border-radius-base-unit / 2 !default;
+$border-radius-medium:       $border-radius-base-unit !default;
+$border-radius-large:        $border-radius-base-unit * 1.5 !default;
+$border-radius-circle:       50% !default;

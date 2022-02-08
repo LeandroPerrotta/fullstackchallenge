@@ -1,0 +1,24 @@
+// Core input variables
+@import '../variables';
+
+// Checkbox
+// -----------------------------------------------------------------------------
+
+$checkbox-size: 14px;
+$checkbox-background-color: $background-white;
+$checkbox-border-style: $background-medium solid $global-border-size;
+$checkbox-active-border-style: $background-medium-dark solid $global-border-size;
+$checkbox-outline: none;
+
+$checkmark-opacity: 0.75;
+$checkmark-size: 13px;
+$checkmark-offset-x: 4px;
+$checkmark-offset-y: -2px;
+$checkmark-image-url: '/addepar/images/checkmark.svg'; 
+
+// Collapse
+// -----------------------------------------------------------------------------
+
+$collapse-color: $text-light;
+$collapse-color-active: $text-dark;
+$collapse-padding: $spacing-default;

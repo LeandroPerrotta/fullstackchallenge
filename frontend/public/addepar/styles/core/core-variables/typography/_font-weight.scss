@@ -1,0 +1,31 @@
+//  -----------------------------------
+//  Core - Core Variables | Typography - Font Weight
+//  -----------------------------------
+
+// font-weight
+// -------------------------
+$font-thin:                         100 !default;
+$font-extra-light:                  200 !default;
+$font-light:                        300 !default;
+$font-normal:                       400 !default;
+$font-medium:                       500 !default;
+$font-semi-bold:                    600 !default;
+$font-bold:                         700 !default;
+$font-extra-bold:                   800 !default;
+$font-heavy:                        900 !default;
+
+$font-weight-xx-light:              $font-thin !default;
+$font-weight-x-light:               $font-extra-light !default;
+$font-weight-light:                 $font-light !default;
+$font-weight-regular:               $font-normal !default;
+$font-weight-bold:                  $font-medium !default;
+$font-weight-x-bold:                $font-semi-bold !default;
+$font-weight-xx-bold:               $font-bold !default;
+$font-weight-xxx-bold:              $font-extra-bold !default;
+$font-weight-xxxx-bold:             $font-heavy !default;
+
+// New Core font Weights
+// -------------------------
+$core-font-weight-regular:          $font-normal !default;
+$core-font-weight-medium:           $font-medium !default;
+$core-font-weight-bold:             $font-bold !default;

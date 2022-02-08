@@ -1,0 +1,30 @@
+//  -----------------------------------
+//  Core - Core Variables | Borders
+//  -----------------------------------
+
+@import 'colors/index';
+
+
+// Border Widths
+//  -------------------------
+$border-width-base-unit:        1px !default;
+
+$border-width-medium:           $border-width-base-unit !default;
+$border-width-large:            $border-width-base-unit * 2 !default;
+$border-width-x-large:          $border-width-base-unit * 5 !default;
+
+// Border Styles
+//  -------------------------
+$border-style-default:          solid !default;
+$border-style-dashed:           dashed !default;
+
+// Border Declarations
+//  -------------------------
+$border-default:                $border-width-medium $border-style-default $border-color-default !default;
+$border-default-transparent:    $border-width-medium $border-style-default transparent !default;
+$border-default-error:          $border-width-medium $border-style-default $border-error !default;
+$border-default-focus:          $border-width-medium $border-style-default $border-focus !default;
+$border-default-hover:          $border-width-medium $border-style-default $border-dark !default;
+
+$border-highlight:              $border-width-large $border-style-default $border-success !default;
+$border-highlight-transparent:  $border-width-large $border-style-default transparent !default;

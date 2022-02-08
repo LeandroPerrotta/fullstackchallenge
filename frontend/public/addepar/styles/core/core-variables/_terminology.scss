@@ -1,0 +1,20 @@
+//  -----------------------------------
+//  Core - Core Variables | Terminology
+//  -----------------------------------
+
+
+$class-state-error:                   'is-error' !default;
+$class-state-warning:                 'is-warning' !default;
+$class-state-success:                 'is-success' !default;
+
+$class-state-active:                  'is-active' !default;
+$class-state-disabled:                'is-disabled' !default;
+$class-state-empty:                   'is-empty' !default;
+$class-state-loading:                 'is-loading' !default;
+$class-state-open:                    'is-open' !default;
+$class-state-closed:                  'is-closed' !default;
+
+// Class names for sizes
+$class-size-small:                    'size-sm' !default;
+$class-size-medium:                   'size-md' !default;
+$class-size-large:                    'size-lg' !default;

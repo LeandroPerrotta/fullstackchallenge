@@ -1,0 +1,33 @@
+@import '../../core-variables/index';
+
+// Table
+// -----------------------------------------------------------------------------
+
+$table-font-size: $font-size-base;
+$table-text-color: $text-dark;
+
+$table-border-style: $border-item-style;
+$table-cell-background: $background-white;
+$table-row-hover-color: $background-hover;
+
+$table-cell-padding: $spacing-small;
+$table-cell-overflow: hidden;
+
+// Table Header
+// -----------------------------------------------------------------------------
+
+$table-header-font-size: $font-size-xsmall;
+$table-header-font-weight: normal;
+$table-header-text-transform: uppercase;
+$table-header-min-height: $spacing-quadruple;
+$table-header-text-align: left;
+$table-header-vertical-align: bottom;
+
+$table-header-border-style: $border-item-style;
+$table-header-background: $background-white;
+
+// Table Footer
+// -----------------------------------------------------------------------------
+
+$table-footer-border-style: $border-item-style;
+$table-footer-background: $background-white;

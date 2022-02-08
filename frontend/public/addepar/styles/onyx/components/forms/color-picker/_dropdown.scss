@@ -1,0 +1,56 @@
+//
+// Color Picker dropdown content
+// -----------------------------------------------------------------------------
+
+.adde-color-picker-dropdown {
+  // TODO: This pattern (spacing between sections) feels like it needs
+  // some kind of layout mixin helper
+  section:not(:first-child) {
+    padding-top: $spacing-default;
+  }
+
+  section:not(:last-child) {
+    padding-bottom: $spacing-default;
+  }
+
+  // Color picker only has 2 sections, but could have more in the future
+  section + section {
+    border-top: 1px solid $border-item;
+  }
+}
+
+// Each row within the color grid.
+// --------------------------------
+// The grid is split into individual rows on purpose, rather than having one
+// big list that we use CSS grid or flex wrap on, which is gets complicated bc
+// you have to somehow set a wrap point based on number of cols you want.
+// We want the dev to instead have full power over the number of cols/rows by
+// inputting a nested array to the component exactly the way they want it.
+.adde-color-picker-row {
+  display: flex;
+
+  // Design wants the first row to be the special gray row,
+  // so it gets separated a bit from the other rows
+  &:first-of-type {
+    margin-bottom: $spacing-default;
+  }
+}
+
+// Row that contains custom color stuff
+.custom-color-row {
+  display: flex;
+
+  // TODO: Ember 1.13: temp form wrapper around input
+  form {
+    flex: 1;
+
+    input[type='text'] {
+      width: 100%;
+    }
+  }
+
+  // This could also be a layout mixin
+  > * + * {
+    margin-left: $custom-row-item-spacing;
+  }
+}

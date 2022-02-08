@@ -1,0 +1,8 @@
+// NOTE: this is new variant to replace the btn-dashed utility.
+// Since in all the uses we only have it on btn-default, it makes sense to extend
+// that style and tie them permanently
+// This may be removed later if we decide we don't need it
+.button-select {
+  @extend .button-default;
+  border-style: dashed;
+}

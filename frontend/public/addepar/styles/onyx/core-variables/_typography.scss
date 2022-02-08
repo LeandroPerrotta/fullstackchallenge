@@ -1,0 +1,60 @@
+// Typography
+//
+// Note that this section is probably going be refactored and the documentation is not complete yet.
+//
+// $univers             - Univers font
+// $univers-condensed   - Univers font condensed
+// $univers-tabular     - Univers font tabular
+// $tiempos             - Tiempos font
+// $tiempos-headline    - Tiempos font headline
+// $backup-fonts        - Browser friendly sans-serif backup fonts to be used along side any custom font declaration
+// $font-[weight]       - font weights 100-900 respectively according to weight name (above is example)
+//
+// Styleguide Style Toolbox - Variables - Typography
+
+// Internal note: Refactor this!
+
+// Font Family
+// -------------------------
+@import '../../core/utilities/typography/variables';
+
+
+// Font Weights
+// -------------------------
+@import '../../core/core-variables/typography/font-weight';
+
+
+// Font Size
+// -------------------------
+$font-size-base:                    13px !default;
+
+$font-size-xl:                      ceil(($font-size-base * 1.7)) !default; // 22px
+$font-size-large:                   ceil(($font-size-base * 1.25)) !default; // 17px
+$font-size-medium:                  14px !default;
+$font-size-small:                   ceil(($font-size-base * 0.85)) !default; // 12px
+$font-size-smaller:                 11px !default;
+$font-size-xsmall:                  10px !default;
+$font-size-smallest:                8px !default;
+
+$font-size-h1:                      floor(($font-size-base * 2.6)) !default; // 33px
+$font-size-h2:                      floor(($font-size-base * 2.15)) !default; // 27px
+$font-size-h3:                      $font-size-xl !default;
+$font-size-h4:                      $font-size-large !default;
+$font-size-h5:                      $font-size-base !default;
+$font-size-h6:                      $font-size-small !default;
+
+$font-size-headline:                floor(($font-size-base * 3.7)) !default; // 48px
+
+// Line Height
+// -------------------------
+$line-height-base:                  1.6796875 !default; // ~22/13
+$line-height-computed:              floor(($font-size-base * $line-height-base)) !default; // 21px
+
+$line-height-large:                 1.33 !default;
+$line-height-small:                 1.5 !default;
+$line-height-xs:                    1.1 !default;
+
+// Letter Spacing
+// -------------------------
+
+$standard-letter-spacing:           1px !default;

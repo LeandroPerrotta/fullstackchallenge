@@ -1,0 +1,9 @@
+<EmberTable as |t|>
+  <t.head @columns={{this.columns}} />
+
+  <t.body
+    @rows={{this.getRows}}
+    @onSelect={{action (mut selection)}}
+    @selection={{this.selection}}
+  />
+</EmberTable>

@@ -1,0 +1,70 @@
+// Core input variables
+@import '../variables';
+
+// Core Button Variables
+// -----------------------------------------------------------------------------
+
+// Text
+$button-base-color:               $text-dark !default;
+$button-font-family:              $font-family-sans-serif !default;
+$button-font-weight:              $font-medium !default;
+$button-font-size:                $font-size-base !default;
+$button-line-height:              1 !default;
+
+// Increments for state color adjustments
+$button-hover-color-inc:          0.2 !default;
+$button-disabled-color-inc:       0.6 !default;
+$button-pressed-color-inc:        0.2 !default;
+
+// Borders
+$button-border-width:             $input-border-width !default;
+$button-border-radius:            $border-radius-base !default;
+$button-focus-outline-offset:     -2px !default;
+$button-transition-speed:         0.1s !default;
+
+// Layout
+$button-spacing-horizontal:       $input-spacing-horizontal !default;
+$button-large-spacing-horizontal: $input-large-spacing-horizontal !default;
+
+$button-height:                   $input-height !default;
+$button-large-height:             $input-large-height !default;
+
+// Layout unique to button
+$button-min-width:                $spacing-default * 9 !default;
+$button-large-min-width:          $spacing-default * 11 !default;
+
+// Default state
+$button-default-color:            $text-dark !default;
+$button-default-bg-color:         $background-extra-light !default;
+$button-default-border-color:     $background-medium !default;
+
+// Primary state
+$button-primary-color:            $text-white !default;
+$button-primary-bg-color:         $background-dark !default;
+$button-primary-border-color:     darken($button-primary-bg-color, 20%) !default;
+
+// Danger state
+$button-danger-color:             $text-white !default;
+$button-danger-bg-color:          $text-red !default;
+$button-danger-border-color:      darken($button-danger-bg-color, 20%) !default;
+
+// Button icon
+$button-icon-color:               #3a3a3a !default;
+$button-icon-hover-color:         #dcdcdc !default;
+$button-icon-size:                $button-height !default;
+$button-icon-img-size:            20px !default;
+$button-icon-hover-border:        rgba(0, 0, 0, 0.15) !default;
+$button-icon-img-opacity:         0.2 !default;
+$button-icon-transition-duration: $button-transition-speed !default;
+
+// Button group
+$button-group-border-style:       $global-border-style !default;
+$button-group-border-size:        $global-border-size !default;
+
+// Button with caret
+$button-caret-spacing:            $spacing-default;
+
+// Color picker button
+// Cell size is determined by how much room is in the button.
+// This ensures that if the button size ever changes, the cell should still size properly.
+$color-picker-button-cell-size:   $button-height - ($spacing-small / 2 * 2) - $input-border-width * 4;

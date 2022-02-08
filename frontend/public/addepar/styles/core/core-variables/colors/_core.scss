@@ -1,0 +1,39 @@
+//  -----------------------------------
+//  Core - Core Variables | Colors - Core
+//  -----------------------------------
+  //  Neutral Palette
+  //  Brand Palette
+  //  Interactive Palette
+
+//  Neutral Palette
+// -------------------------
+$black:                           #000000 !default;
+$grey-xx-dark:                    #333333 !default;
+$grey-x-dark:                     lighten($grey-xx-dark, 30%) !default;
+$grey-dark:                       #999999 !default;
+$grey-medium:                     #c7c7c7 !default;
+$grey-light:                      #dddddd !default;
+$grey-x-light:                    #e9e9e9 !default;
+$grey-xx-light:                   #f4f4f4 !default;
+$white:                           #ffffff !default;
+
+//  Brand Palette
+// -------------------------
+$brand-blue-gray:                 #27618a !default;
+
+//  Interactive Palette
+// -------------------------
+$red:                             #cb323b !default;
+$red-medium:                      #e15554 !default;
+$red-light:                       #fae8ee !default;
+$yellow-dark:                     #af8828 !default;
+$yellow-medium:                   #e5b92a !default;
+$yellow-light:                    #faf4d6 !default;
+$yellow-highlight:                #ffff00 !default;
+$green:                           #478951 !default;
+$green-light:                     #d7eed0 !default;
+$blue:                            $brand-blue-gray !default;
+$blue-light:                      #d7ebfa !default;
+$blue-x-light:                    lighten($blue-light, 4%) !default;
+
+$hover-color-darken:              10% !default;

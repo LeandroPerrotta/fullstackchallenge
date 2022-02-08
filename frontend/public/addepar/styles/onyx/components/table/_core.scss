@@ -1,0 +1,184 @@
+@import '../../elements/table/core';
+@import '../../elements/table/variables';
+@import '../../elements/inputs/checkbox/checkbox-core';
+@import '../../elements/inputs/checkbox/collapse-core';
+
+@import './variables';
+
+// Ember Table
+//
+// Stylings for Ember Table. For more information on tables, see the Ember Table
+// documentation.
+//
+// Styleguide Ember Table
+// -----------------------------------------------------------------------------
+
+@mixin base-ember-table() {
+  @extend %table;
+
+  /**** Sort Controls ****/
+
+  th.is-sortable {
+    cursor: pointer;
+
+    &:hover {
+      background: $et-sortable-header-hover-background;
+    }
+  }
+
+  .et-sort-indicator {
+    &:before {
+      font-family: $font-family-base;
+      display: inline-block;
+      border: none;
+
+      // This prevents the icon from affecting the base-line of the surrounding
+      // text, so it doesn't move around
+      line-height: 1;
+
+      transform: rotate(0deg);
+      content: '\25be'; // down triangle
+    }
+
+    &.is-ascending:before {
+      transform: rotate(180deg);
+    }
+  }
+
+  /**** Resize Controls ****/
+
+  .et-header-resize-area {
+    cursor: $et-resizing-cursor;
+    width: $et-resize-area-width;
+  }
+
+  &.is-resizing * {
+    cursor: $et-resizing-cursor !important;
+    user-select: none;
+  }
+
+  /**** Reorder Controls ****/
+
+  th.is-reorderable {
+    cursor: $et-reorder-cursor;
+  }
+
+  .et-reorder-main-indicator {
+    position: absolute;
+    background: $et-reorder-main-indicator-background;
+    border-left: $et-reorder-main-indicator-border-left;
+    border-right: $et-reorder-main-indicator-border-right;
+
+    opacity: $et-reorder-indicator-opacity;
+    z-index: 10;
+
+    th {
+      background: $et-reorder-header-active-background;
+    }
+  }
+
+  .et-reorder-drop-indicator {
+    position: absolute;
+    background: $et-reorder-drop-indicator-background;
+    border-left: $et-reorder-drop-indicator-border-left;
+    border-right: $et-reorder-drop-indicator-border-right;
+
+    opacity: $et-reorder-indicator-opacity;
+    z-index: 10;
+    height: 100%;
+  }
+
+  &.is-reordering * {
+    cursor: $et-reordering-cursor !important;
+    user-select: none;
+  }
+
+  /**** Row Controls ****/
+
+  td.is-first-column {
+    // The first column may contain table controls, such as the selection checkbox
+    // and the collapse toggle. These are wrapped in a container so we can use
+    // flex to display them and have them grow correctly with the cell
+    padding: 0;
+  }
+
+  .et-cell-container {
+    display: flex;
+  }
+
+  .et-toggle-select,
+  .et-toggle-collapse {
+    // Use flex to vertically align the checkbox checkmark and toggle elements
+    display: flex;
+    align-items: center;
+  }
+
+  .et-toggle-select {
+    @extend %checkbox;
+
+    padding: $et-table-cell-padding;
+  }
+
+  .et-toggle-collapse {
+    @extend %collapse;
+
+    // Padding is applied to the collapse toggle to indent it further, so we
+    // don't apply padding on the base styles, and instead set a default width.
+    // This prevents us from having to do maths to get the indent padding.
+    box-sizing: content-box;
+    width: $et-indent-placeholder-width;
+    padding: 0;
+  }
+
+  .et-depth-placeholder:not(.depth-0) {
+    // Placeholder element for the last child in a tree, takes the place of
+    // the collapse toggle and pushes the items further out.
+    box-sizing: content-box;
+    width: $et-indent-placeholder-width;
+    height: 100%;
+  }
+
+  .et-depth-indent {
+    @for $i from 1 through 10 {
+      &.depth-#{$i} {
+        padding-left: $et-indent-amount * $i;
+      }
+    }
+  }
+
+  .et-cell-content {
+    // Flex the remaining cell content to take up the rest of the cell, and
+    // give it the same padding as normal table cells.
+    flex: 1;
+    padding: $et-table-cell-padding;
+  }
+
+  tr {
+    &.is-selected td {
+      background: $et-selectable-row-selected-background;
+    }
+
+    &.is-selectable {
+      cursor: pointer;
+
+      &:hover td {
+        background: $et-selectable-row-hover-background;
+      }
+    }
+  }
+
+  th,
+  td {
+    &.text-align-center {
+      text-align: center;
+    }
+
+    &.text-align-right {
+      text-align: right;
+    }
+  }
+}
+
+%ember-table {
+  @include base-ember-table();
+}

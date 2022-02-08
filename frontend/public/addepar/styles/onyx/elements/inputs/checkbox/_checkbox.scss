@@ -1,0 +1,5 @@
+@import './checkbox-core';
+
+.checkbox {
+  @extend %checkbox;
+}

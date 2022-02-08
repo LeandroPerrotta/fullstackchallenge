@@ -1,0 +1,5 @@
+@import './collapse-core';
+
+.collapse {
+  @extend %collapse;
+}

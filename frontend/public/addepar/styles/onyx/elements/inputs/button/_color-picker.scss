@@ -1,0 +1,27 @@
+//
+// Color Picker Target Button
+// -----------------------------------------------------------------------------
+// This button is a combination of a color cell, and a caret,
+// which is for now only used for color picker dropdown target
+
+.adde-color-picker-button {
+  @extend %button;
+  @extend %popper-target-button;
+  @include button-type(
+    $button-default-color,
+    $button-default-bg-color,
+    $button-default-border-color
+  );
+  // overwrites for the base button type, specific to color picker
+  padding: 0;
+  min-width: auto; // this may go away if we tweak button design to not have a default min-width
+
+  .is-invalid & {
+    @include invalid-input();
+  }
+
+  .color-cell {
+    width: $color-picker-button-cell-size;
+    height: $color-picker-button-cell-size;
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../core-variables/index';
+
+// Adding global input variables here as needed
+
+// Sizing
+$input-height:                          $spacing-default * 4 !default;
+$input-large-height:                    $spacing-default * 5 !default;
+$input-spacing-horizontal:              $spacing-small * 3 !default;
+$input-large-spacing-horizontal:        $spacing-double !default;
+
+// Borders
+$input-border-width:                    $global-border-size !default;
+
+$input-border-color:                    $border-input !default;
+$input-error-border-color:              $border-red !default;

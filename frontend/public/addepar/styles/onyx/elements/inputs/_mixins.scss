@@ -1,0 +1,58 @@
+// Core Input Mixins
+// -----------------------------------------------------------------------------
+
+// invalid-input()
+//
+// Global styling for invalid inputs.
+//
+// ### Example Usage:
+//
+//   ```
+//   input:invalid,
+//   input.is-invalid {
+//     @include invalid-input();
+//   }
+//   ```
+//
+// ### Example Output:
+//   ```
+//   input:invalid,
+//   input.is-invalid {
+//     border-color: #cb323b;
+//     outline-color: #cb323b;
+//   }
+//   ```
+// Styleguide: Style Toolbox - Mixins - Elements - @invalid-input()
+@mixin invalid-input() {
+  border-color: $input-error-border-color;
+  outline-color: $input-error-border-color;
+}
+
+// disabled-input()
+//
+// Global styling for disabled elements.
+// Any color modifications need to be done separately.
+//
+// ### Example Usage:
+//
+//   ```
+//   .element:disabled {
+//     @include disabled-input();
+//   }
+//   ```
+//
+// ### Example Output:
+//   ```
+//   .element:disabled {
+//     cursor: not-allowed;
+//     pointer-events: none;
+//     box-shadow: none;
+//   }
+//   ```
+// Styleguide: Style Toolbox - Mixins - Elements - @disabled-input()
+
+@mixin disabled-input() {
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}

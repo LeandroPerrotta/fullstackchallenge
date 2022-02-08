@@ -1,0 +1,27 @@
+//
+// Color Radio
+// -----------------------------------------------------------------------------
+// Styling for the radio type color cells in the color picker dropdown
+
+.adde-color-picker-radio {
+  position: relative; // for the abs positioned input inside
+
+  .color-cell:hover {
+    @extend %active-color-cell;
+    cursor: pointer;
+  }
+
+  input[type='radio'] {
+    // Hide the radio dot, which is covered by the cell
+    // Cannot use 'display: none' or 'visibility: hidden' bc focus won't work
+    position: absolute;
+    // nudge it over a bit just in case it peeps out
+    left: $color-radio-offset;
+    top: $color-radio-offset;
+    z-index: $z-index-behind;
+
+    &:checked + .color-cell {
+      @extend %active-color-cell;
+    }
+  }
+}

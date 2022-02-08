@@ -1,0 +1,17 @@
+//  -----------------------------------
+//  Core - Core Variables | Colors - Borders
+//  -----------------------------------
+
+$border-x-light:             			$grey-x-light !default;
+$border-light:               			darken($border-x-light, $hover-color-darken) !default;
+$border-medium:              			$background-medium !default;
+$border-dark:                			$background-dark !default;
+$border-x-dark:                   $text-dark !default;
+$border-error:                    $text-error !default;
+$border-warning:                  $icon-warning !default;
+$border-success:                  $text-success !default;
+$border-focus:                    $brand-blue-gray !default;
+
+$border-color-default:            $border-x-light !default;
+$border-color-input:              $border-medium !default;
+$border-color-header:             $border-x-light !default;

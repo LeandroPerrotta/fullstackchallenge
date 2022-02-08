@@ -1,0 +1,92 @@
+// Modal structure, taken from ember-modal-dialog/ember-modal-structure
+.ember-modal-overlay {
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: $adde-modal-z-index;
+}
+
+.ember-modal-dialog {
+  position: fixed;
+  z-index: $adde-modal-z-index;
+
+  &.ember-modal-dialog-in-place {
+    position: static;
+  }
+}
+
+// Do not display the trigger element (ie, where the wormhole is created)
+.adde-modal-trigger {
+  display: none;
+}
+
+// Base modal
+.adde-modal {
+  @include font-settings();
+  font-family: $adde-modal-font-family;
+  border-radius: $adde-modal-border-radius;
+  background-color: $adde-modal-background;
+  width: $adde-modal-width;
+  box-shadow: $adde-modal-box-shadow;
+
+  &.size-sm {
+    width: $adde-modal-width-sm;
+  }
+
+  &.size-lg {
+    width: $adde-modal-width-lg;
+  }
+}
+
+// Overlay
+.ember-modal-overlay.translucent {
+  background-color: $adde-modal-overlay-background;
+}
+
+// Body
+.adde-modal-body {
+  padding: $adde-modal-body-padding;
+
+  .adde-modal-footer {
+    padding: 0;
+  }
+}
+
+// Header
+.adde-modal-header {
+  padding: $adde-modal-header-padding;
+  background-color: $adde-modal-header-background;
+  color: $adde-modal-header-text-color;
+
+  h4.adde-modal-title {
+    display: inline-block;
+    margin: 0;
+    height: $adde-modal-header-text-height;
+    font-size: $adde-modal-header-font-size;
+    font-weight: $adde-modal-header-font-weight;
+  }
+
+  button.adde-modal-close {
+    position: relative;
+    float: right;
+    border: none;
+    top: $adde-modal-header-padding * -1; // offset the padding
+    right: $adde-modal-header-padding * -1; // offset the padding
+    height: $adde-modal-close-button-size;
+    width: $adde-modal-close-button-size;
+    color: $adde-modal-header-text-color;
+    border-radius: $adde-modal-close-button-border-radius;
+
+    &:hover {
+      background-color: $adde-modal-hover-close-background;
+    }
+  }
+}
+
+// Footer
+.adde-modal-footer {
+  padding: $adde-modal-footer-padding;
+  border-top: $adde-modal-footer-border;
+}

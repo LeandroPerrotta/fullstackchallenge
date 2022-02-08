@@ -1,0 +1,88 @@
+// Button
+//
+// Buttons to use throughout the app.
+//
+// Markup:
+// <button class="{{modifier_class}}">Button</button>
+//
+// .button-default - Default button.
+// .button-primary - Primary action button.
+//
+// Styleguide Style Toolbox - Elements - Button
+
+// Core Button CSS
+// -----------------------------------------------------------------------------
+
+@import 'placeholders';
+
+
+// Button types
+// -----------------------------------------------------------------------------
+//
+
+// Basic Button types
+// -------------------------
+
+@import 'types/text';
+@import 'types/default';
+@import 'types/primary';
+@import 'types/danger';
+@import 'types/link';
+@import 'types/select';
+@import 'types/icon';
+
+// Misc
+
+// Technically we don't allow buttons to be anything other than a button element,
+// however for file uploads we have to use the label element
+label[class^='button-'] {
+  line-height: $button-height;
+  min-width: min-content;
+}
+
+// Utilities
+// -----------------------------------------------------------------------------
+//
+
+// Groups of Buttons
+// -----------------------------------------------------------------------------
+// Container for buttons that should be flush next to each other
+// Formerly btn-group
+
+.button-flush-group {
+  display: flex;
+  flex-wrap: wrap;
+
+  [class^='button-'] {
+    & + [class^='button-'] {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      // We use the overlapping border method rather than removing the border
+      // because it can get in a weird state when there are disabled/active
+      // buttons in the group
+      margin-left: -1px;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    // Makes border go under active button borders
+    &[disabled] {
+      z-index: -1;
+    }
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+// These can be used as utility classes in generic cases where it makes sense,
+// but we should try to use these with extends when possible
+.button-large {
+  height: $button-large-height;
+  padding-right: $button-large-spacing-horizontal;
+  padding-left: $button-large-spacing-horizontal;
+  min-width: $button-large-min-width;
+}

@@ -1,0 +1,5 @@
+@import './core';
+
+.ember-table {
+  @extend %ember-table;
+}

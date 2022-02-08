@@ -1,0 +1,40 @@
+//  -----------------------------------
+//  Core - Core Variables | Z-Index - Core Variables
+//  -----------------------------------
+
+$layer-negative-bottom:     -2 !default;
+$layer-negative-top:        -1 !default;
+
+$layer-auto:                auto !default;
+
+// The base set of layers should control layering of the default interface
+$layer-base-base:           0 !default;
+$layer-base-bottom:         10 !default;
+$layer-base-middle:         20 !default;
+$layer-base-top:            30 !default;
+$layer-base-x-top:          40 !default;
+$layer-base-xx-top:         50 !default;
+
+// If there are not enough base layers, the "above" layers can be used to layer elements above the base layer. 
+$layer-above-base:          100 !default;
+$layer-above-bottom:        110 !default;
+$layer-above-middle:        120 !default;
+$layer-above-top:           130 !default;
+$layer-above-x-top:         140 !default;
+$layer-above-xx-top:        150 !default;
+
+// The "overlay" layer should control the layering of all elements that appear in an overlay.
+$layer-overlay-base:        200 !default;
+$layer-overlay-bottom:      210 !default;
+$layer-overlay-middle:      220 !default;
+$layer-overlay-top:         230 !default;
+$layer-overlay-x-top:       240 !default;
+$layer-overlay-xx-top:      250 !default;
+
+// The "top" layer should include any element that should be layered above an overlay. (ex: Alerts)
+$layer-top-base:            300 !default;
+$layer-top-bottom:          310 !default;
+$layer-top-middle:          320 !default;
+$layer-top-top:             330 !default;
+$layer-top-x-top:           340 !default;
+$layer-top-xx-top:          350 !default;

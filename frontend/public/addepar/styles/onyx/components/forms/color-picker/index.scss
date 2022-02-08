@@ -1,0 +1,21 @@
+// Color Picker
+//
+// Fancy color picker.
+//
+// Ember usage
+// ```
+// {{adde-color-picker
+//   selectedColor="#c0ffee"
+// }}
+// ```
+//
+// Markup:
+// tbd
+//
+// .adde-color-picker - base color picker.
+//
+// Styleguide Addepar Style Toolbox - Components - Color Picker
+
+@import 'variables';
+@import 'color-radio';
+@import 'dropdown';

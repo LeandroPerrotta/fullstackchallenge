@@ -1,2 +1,11 @@
-{{page-title "Vehicles"}}
-<h3 style="text-align:center">Insira aqui sua Lista de Veículos</h3>
+{{page-title "Lista de veiculos"}}
+<BaseContent>
+	<div id='buttons-bar'>
+		<BsButton disabled='disabled' @onClick={{this.submit}}>Adicionar</BsButton>
+		<BsButton disabled='disabled' @onClick={{this.submit}}>Editar</BsButton>
+		<BsButton disabled='disabled' @onClick={{action "reload"}}>Remover</BsButton>
+	</div>
+
+	<Vehicles/>
+</BaseContent>
+

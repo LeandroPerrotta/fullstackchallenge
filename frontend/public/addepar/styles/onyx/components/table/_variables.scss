@@ -1,0 +1,53 @@
+@import '../../core-variables/index';
+
+// Sort Controls
+// -----------------------------------------------------------------------------
+
+$et-sortable-header-hover-background: $background-hover;
+$et-sortable-header-focus-background: $background-hover;
+
+// Resize Controls
+// -----------------------------------------------------------------------------
+
+$et-resize-area-width: $spacing-default * 1.5;
+$et-resize-cursor: col-resize;
+$et-resizing-cursor: col-resize;
+
+// Reorder Controls
+// -----------------------------------------------------------------------------
+
+$et-reorder-cursor: grab;
+$et-reordering-cursor: grabbing;
+
+$et-reorder-header-active-background: $background-hover;
+$et-reorder-indicator-opacity: $drag-item-opacity;
+
+$et-reorder-main-indicator-background: transparent;
+$et-reorder-main-indicator-border-left: none;
+$et-reorder-main-indicator-border-right: none;
+
+$et-reorder-drop-indicator-background: transparent;
+$et-reorder-drop-indicator-border-left: none;
+$et-reorder-drop-indicator-border-right: $border-blue solid $global-border-size;
+
+// Row Controls
+// -----------------------------------------------------------------------------
+
+$et-table-cell-padding: $table-cell-padding;
+
+$et-indent-placeholder-width: $spacing-triple;
+$et-indent-amount: $spacing-double;
+
+$et-selectable-row-hover-background: $background-hover;
+$et-selectable-row-selected-background: $background-hover-active;
+
+// Editable Table
+// -----------------------------------------------------------------------------
+$editable-table-header-bg-color: $background-extra-light;
+// TODO: Refer back to core-variables when shadow section is no longer broken
+$editable-table-header-box-shadow: 4px 2px 8px 0px rgba(0, 0, 0, 0.1);
+$editable-table-cell-padding: $spacing-default;
+// To match thinner looking scrollbar in design mock
+$editable-table-scrollbar-width: $spacing-default;
+$editable-table-input-active-border-width: 2px;
+$editable-table-input-active-border: $editable-table-input-active-border-width solid $brand-blue-gray;

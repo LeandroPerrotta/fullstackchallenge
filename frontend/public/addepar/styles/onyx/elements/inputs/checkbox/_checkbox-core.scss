@@ -1,0 +1,95 @@
+@import './variables';
+
+// Checkbox
+//
+// Checkbox styling to use throughout the app. This class can be applied
+// directly to checkbox inputs, or can be applied to parent elements that
+// contain a checkbox. The later is used for compatibility with IE11.
+//
+// Markup:
+// <input type="checkbox" class="checkbox" />
+//
+// <span class="checkbox">
+//   <input type="checkbox" />
+//   <span></span>
+// </span>
+//
+// Styleguide Style Toolbox - Elements - Checkbox
+
+// Checkbox CSS
+// -----------------------------------------------------------------------------
+
+
+@mixin base-checkbox() {
+  margin: 0;
+  display: inline-block;
+  appearance: none;
+  position: relative;
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    opacity: 0.001;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  input[type='checkbox'] + * {
+    display: block;
+  }
+
+  &:empty:before,
+  input[type='checkbox'] + *:before {
+    content: '';
+    display: block;
+
+    width: $checkbox-size;
+    height: $checkbox-size;
+    background-color: $checkbox-background-color;
+    border: $checkbox-border-style;
+  }
+
+  &:empty:after,
+  input[type='checkbox'] + *:after {
+    display: none;
+    content: '';
+
+    opacity: $checkmark-opacity;
+
+    height: $checkmark-size + abs($checkmark-offset-y);
+    width: $checkmark-size + abs($checkmark-offset-x);
+
+    // If offset is negative, then adding height/width is all we need to do,
+    // so use max to set position to 0.
+    background-position: max(0, $checkmark-offset-x) max(0, $checkmark-offset-y);
+    background-size: $checkmark-size;
+    background-image: url(#{$checkmark-image-url});
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  &:focus {
+    outline: $checkbox-outline;
+  }
+
+  &:focus:before,
+  input[type='checkbox']:focus + *:before {
+    border: $checkbox-active-border-style;
+  }
+
+  &:checked:after,
+  input[type='checkbox']:checked + *:after {
+    display: block;
+  }
+}
+
+%checkbox {
+  @include base-checkbox();
+}

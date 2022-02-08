@@ -1,0 +1,72 @@
+// Button placeholder used to create button types
+%button {
+  @include reset-button();
+  user-select: none;
+  touch-action: manipulation;
+
+  // Text formatting
+  color: $button-base-color;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  text-align: center;
+  white-space: nowrap;
+
+  // Buttons now have a specific height for enforced uniformity
+  height: $button-height;
+  vertical-align: middle;
+  min-width: $button-min-width;
+  padding-left: $button-spacing-horizontal;
+  padding-right: $button-spacing-horizontal;
+
+  // Border placeholder maintains consistent spacing around all buttons with or without borders
+  border: $button-border-width solid transparent;
+  border-radius: $button-border-radius;
+
+  transition: background-color $button-transition-speed ease-in-out, border-color $button-transition-speed ease-in-out;
+
+  // Hover state
+  &:hover {
+    color: ice-adjust-color($button-base-color, $button-hover-color-inc);
+  }
+
+  // Active/Pressed state
+  &:active,
+  &.is-active,
+  &.active, // TODO: see if we can get ember to use is-active instead
+  .open &.dropdown-toggle { // TODO: remove dropdown-toggle after dropdown refactor {
+    color: ice-adjust-color($button-base-color,  -$button-pressed-color-inc);
+  }
+
+  // Disabled state
+  &[disabled],
+  fieldset[disabled] & { // we may decide to change fieldset to a class later on
+    @include disabled-input();
+    color: ice-adjust-color($button-base-color,  $button-disabled-color-inc);
+  }
+
+  // If button is tied to a dropdown that's open,
+  // don't display outline, display hover color instead
+  // TODO: remove after dropdown refactor
+  .open &.dropdown-toggle:focus,
+  .open &[data-toggle='dropdown']:focus {
+    outline: none;
+    color: $button-icon-hover-color;
+  }
+}
+
+
+// Button with caret
+// -----------------------------------------------------------------------------
+// A very common button pattern used for dropdowns, popovers, selects, color picker, etc.
+// TODO: better name?
+%popper-target-button {
+  // Layout content and caret
+  display: inline-flex;
+  align-items: center;
+
+  .button-caret {
+    padding: 0 $button-caret-spacing;
+    vertical-align: middle;
+  }
+}

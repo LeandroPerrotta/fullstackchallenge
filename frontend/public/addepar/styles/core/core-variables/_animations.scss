@@ -1,0 +1,28 @@
+//  -----------------------------------
+//  Core - Core Variables | Animations
+//  -----------------------------------
+
+@import 'duration';
+
+
+//  Animation types
+//  -------------------------
+$core-animation-type-shake:             shake !default;
+$core-animation-type-spin:              spin !default;
+$core-animation-type-blink:             blink !default;
+$core-animation-type-fadein:            fade-in !default;
+
+//  Animation Timing
+//  -------------------------
+$animation-duration-short:              $duration-x-short !default;
+$animation-duration-medium:             $duration-medium !default;
+$animation-duration-long:               $duration-long !default;
+$animation-duration-x-long:             $duration-x-long !default;
+$animation-duration-xx-long:            $duration-xx-long !default;
+$animation-duration-xxx-long:           $duration-xxx-long !default;
+
+//  Animation Declarations
+//  -------------------------
+$shake-animation:                       $animation-type-shake $animation-duration-medium 1 ease !default;
+$spin-animation:                        $animation-type-spin $animation-duration-xx-long linear infinite !default;
+$fadein-animation:                      $animation-type-fadein $animation-duration-short !default;

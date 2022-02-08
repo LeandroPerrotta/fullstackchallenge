@@ -1,0 +1,40 @@
+// Icon Button
+// -----------------------
+// All this class does is set the colors for icons and evenly distribute the spacing
+
+.button-icon {
+  @extend %button;
+  color: $button-icon-color;
+  background: #f4f4f4;
+  border-color: #d8d8d8; // We can't use button-default-* variables because they are reused by other styles other than button-icon (such as color-picker)
+  padding: 0;
+  width: $button-icon-size;
+  min-width: $button-icon-size;
+
+  &:hover,
+  &:active,
+  &.is-active,
+  &.active,
+  .open &.dropdown-toggle {
+    border-color: $button-icon-hover-border;
+    background: $button-icon-hover-color;
+  }
+
+  &:active,
+  &.is-active,
+  &.active,
+  .open &.dropdown-toggle {
+    z-index: 0;
+  }
+
+  &:focus {
+    background: #DCDCDC;
+    z-index: 0;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  img {
+    height: $button-icon-img-size;
+  }
+}

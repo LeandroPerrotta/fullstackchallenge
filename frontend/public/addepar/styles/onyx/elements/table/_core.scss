@@ -1,0 +1,74 @@
+@import './variables';
+
+// Table
+//
+// Table styling to use throughout the app.
+//
+// Markup:
+// <table class="table">
+//   <thead>
+//     <tr><th>Header</th></tr>
+//   </thead>
+//
+//   <tbody>
+//     <tr><td>Cell</td></tr>
+//   </tbody>
+// </table>
+//
+// Styleguide Style Toolbox - Elements - Table
+
+// Table CSS
+// -----------------------------------------------------------------------------
+
+@mixin base-table() {
+  color: $table-text-color;
+  font-size: $table-font-size;
+
+  th,
+  td {
+    overflow: $table-cell-overflow;
+  }
+
+  th {
+    height: $table-header-min-height; // Height in table cells is treated as min-height
+
+    font-size: $table-header-font-size;
+    font-weight: $table-header-font-weight;
+    text-transform: $table-header-text-transform;
+
+    border-bottom: $table-header-border-style;
+    vertical-align: $table-header-vertical-align;
+    text-align: $table-header-text-align;
+
+    padding: $table-cell-padding;
+    background: $table-header-background;
+  }
+
+  td {
+    padding: $table-cell-padding;
+    background: $table-cell-background;
+  }
+
+  thead {
+    tr:first-child > th {
+      border-top: $table-header-border-style;
+    }
+  }
+
+  tbody {
+    td {
+      border-bottom: $table-border-style;
+    }
+  }
+
+  tfoot {
+    td {
+      border-top: $table-footer-border-style;
+      background: $table-footer-background;
+    }
+  }
+}
+
+%table {
+  @include base-table();
+}
