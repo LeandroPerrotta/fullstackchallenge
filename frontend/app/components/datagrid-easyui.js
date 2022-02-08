@@ -29,7 +29,7 @@ export default Component.extend({
 	                data: this.getBrands()
 	                ,onChange: async function(newvalue, oldvalue){
 
-	                	if(self.emitOnChange && newvalue != null && self.editIndex != -1){
+	                	if(self.emitOnChange && !isNaN(newvalue) && self.editIndex != -1){
 
 					        var ed = self.dg.datagrid('getEditor', {
 					            index: self.editIndex,
@@ -58,7 +58,7 @@ export default Component.extend({
 	                disabled: true
 					,onChange: async function(newvalue, oldvalue){
 
-	                	if(self.emitOnChange && newvalue != null && self.editIndex != -1){
+	                	if(self.emitOnChange && !isNaN(newvalue) && self.editIndex != -1){
 
 
 					        var ed = self.dg.datagrid('getEditor', {
@@ -93,7 +93,7 @@ export default Component.extend({
 	                disabled: true
 					,onChange: async function(newvalue, oldvalue){
 
-	                	if(self.emitOnChange && newvalue != null && self.editIndex != -1){
+	                	if(self.emitOnChange && newvalue != '' && !isNaN(newvalue) && self.editIndex != -1){
 
 							let year = await self.store.peekRecord('year', newvalue)           		
 

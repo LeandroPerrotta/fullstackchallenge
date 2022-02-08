@@ -152,14 +152,14 @@ ParserVehicleOptions.prototype.fetchYear = async function(brand_id, model_id){
 				return
 			}
 
-			this.years.set(id, { year: year.nome, version: details.Combustivel })
+			this.years.set(details.AnoModelo, { year: year.nome, version: details.Combustivel })
 
 			if(!this.yearsOut.has(model_id)){
 				this.yearsOut.set(model_id, { data: [] })
 
 			}
 
-			this.yearsOut.get(model_id).data.push(global.rawItemToJSONAPI(id, this.years.get(id), 'Year'))						
+			this.yearsOut.get(model_id).data.push(global.rawItemToJSONAPI(details.AnoModelo, this.years.get(details.AnoModelo), 'Year'))						
 		}
 	}
 	catch(e){
