@@ -37,9 +37,6 @@ var Io_Vehicle = function Io_Vehicle(){
 	else{
 		console.log('WARNING :: NO PERSISTENT DATA DEFINED. USING RAW DATA')
 		this.raw = new Map()
-
-		this.raw.set(2, {plate: '555555', brand: 'Chevrolet', type: 'Classico', version: 'Qualquer', year: 1970, color: 'Preto' })
-		this.raw.set(1, {plate: '666666', brand: 'Volkswagen', type: 'Classico', version: 'Qualquer', year: 1965, color: 'Amarelo' })		
 	}
 }
 

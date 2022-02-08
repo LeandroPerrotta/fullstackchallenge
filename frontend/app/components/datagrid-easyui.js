@@ -74,9 +74,6 @@ export default Component.extend({
 					        self.dg.datagrid('loading')
 
 					        let rows = await self.getYears($(ed_brand.target).combobox('getValue'), newvalue)
-					        
-					        console.log(self.editIndex)
-					        console.log(ed)
 
 					        $(ed.target).combobox('clear');	  
 					        $(ed.target).combobox('loadData', rows);	                		
@@ -169,7 +166,6 @@ export default Component.extend({
 			rows.push(model.serializeCombobox)
 		})
 
-		console.log(rows)
 		return rows
 	}
 
@@ -204,19 +200,13 @@ export default Component.extend({
 		})
 
 		this.dg = this.dg.datagrid('loadData', this.getRows())
-		console.log('Reloaded')
-		console.log(this.getRows())
 	}
 
 	,onEndEdit: async function(index, row){
 
-		console.log('index: ' + index)
-		console.log(row)
-
 		/* Its to save in the cell the label of item instead the id */
 		/* I dont want it emmit onChange on the components while this happening */ 
 		this.emitOnChange = false
-		console.log('emit = false')
 		let columns = this.getColumns()
 		for(var i in columns){
 
@@ -237,8 +227,6 @@ export default Component.extend({
 			}
 		}
 
-		console.log('emit = true')
-
 		let selected = row
     	let success = false
 
@@ -246,14 +234,11 @@ export default Component.extend({
     		try{
         		let vehicle = await this.store.peekRecord('vehicle', selected.id)
 
-        		console.log(selected)
         		vehicle.setProperties(selected)
         		let ret = await vehicle.save()
-        		console.log(ret)
         		success = true
     		}
     		catch(e){
-    			console.log(e)
     			let hasError = e.errors && e.errors[0] && e.errors[0].detail
     			if(hasError){
     				$.messager.alert('Ooops!', e.errors[0].detail,'info');
@@ -268,12 +253,10 @@ export default Component.extend({
         		let vehicle = this.store.createRecord('vehicle', selected)
 
         		let ret = await vehicle.save()
-        		console.log(ret)
 
     			//here comes some workaround because Ember is not able to fill up model's ID for the 
     			//just created entry with the ID sent back from API.
     			//for this reason, we must reload whole datagrid, instead just update the new row
-    			console.log(vehicle.get('id'))
     			await this.store.unloadAll('vehicle')
     			await this.store.findAll('vehicle', { reload: true })
     			this.updateDatagrid()
@@ -326,15 +309,12 @@ export default Component.extend({
 		if(this.editIndex == -1){
 			let selection = this.dg.datagrid('getSelections')
 
-			console.log(selection)
-
 			if(selection.length > 0){
 
 				for(let row of selection){
 					let index = this.dg.datagrid('getRowIndex', row)
 
 					try{
-						console.log(row)
 						await this.store.peekRecord('vehicle', row.id).destroyRecord()
 						this.dg.datagrid('deleteRow', index)
 					}catch(e){
@@ -386,7 +366,6 @@ export default Component.extend({
                     .datagrid('beginEdit', index);
 
                 this.editIndex = index;
-                console.log(`edit index: ${this.editIndex}`)
             } else {
                 setTimeout(function(){
                     this.dg.datagrid('selectRow', this.editIndex);

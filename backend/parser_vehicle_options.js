@@ -74,7 +74,7 @@ ParserVehicleOptions.prototype.fetchBrands = async function(){
 		}
 	}
 	catch(e){
-		console.log(e)
+		console.log('Failed parsing: ' + url)
 	}
 
 	if(MODE == 'CACHE')
@@ -96,10 +96,6 @@ ParserVehicleOptions.prototype.fetchModel = async function(brand_id){
 
 			let id = parseInt(model.codigo)
 
-			if(this.models.has(id)){
-				console.log(model)
-			}
-
 			this.models.set(id, { model: model.nome, 'brand-id': brand_id} )
 
 			if(!this.modelsOut.has(brand_id)){
@@ -114,9 +110,7 @@ ParserVehicleOptions.prototype.fetchModel = async function(brand_id){
 		}
 	}
 	catch(e){
-		console.log(url)
-		console.log(response)
-		console.log(e)
+		console.log('Failed parsing: ' + url)
 	}	
 }
 
@@ -150,7 +144,6 @@ ParserVehicleOptions.prototype.fetchYear = async function(brand_id, model_id){
 		}
 	}
 	catch(e){
-		console.log(e)
 		console.log('Failed parsing: ' + url)
 	}	
 }

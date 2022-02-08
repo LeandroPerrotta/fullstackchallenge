@@ -18,14 +18,14 @@ Alterar o arquivo backend/db_pgsql.js para os dados de seu banco ou imagem.
 
 `ember serve`
 
-## Tecnologias ultilizadas backend
+## Tecnologias utilizadas backend
 
 - Node.js
 - Express
 - pg (conector Pgsql)
 - fetch (para comunicação com a API publica dos veiculos)
 
-## Tecnologias ultizadas no frontend 
+## Tecnologias utizadas no frontend 
 
 - Ember JS
 - Ember-Table (apenas visualização)
